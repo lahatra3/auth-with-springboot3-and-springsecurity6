@@ -18,14 +18,11 @@ import java.util.function.Function;
 @Slf4j
 @Service
 public class JwtService {
-   @Value("${jwt.secret-key}")
+
+   @Value("${security.jwt.secret-key}")
    private String JWT_SECRET_KEY;
-
-   @Value("${jwt.expiration.access-token}")
+   @Value("${security.jwt.expiration.access-token}")
    private String JWT_EXPIRATION_ACCESS_TOKEN;
-
-   @Value("${jwt.expiration.access-token}")
-   private String JWT_EXPIRATION_REFRESH_TOKEN;
 
 
    public String extractUsername(String token) {
